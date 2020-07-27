@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>栈操作</title>
-</head>
-
-<body>
-    <script>
+## 栈的常见操作
++ push():添加一个新元素到栈顶
++ pop():除移栈顶的元素，返回被除移的数
++ peek():返回栈顶的元素，不对栈做任何修改
++ isEmpty():如果栈里没有任何元素就返回true，否则返回false
++ size():返回栈里的元素个数（和数组length很像）
++ toString():将栈结构的内容以字符串形式返回
+实现这六个函数:
+```js
         function Stack() {
             //栈中的属性
             this.items = []
@@ -42,18 +39,10 @@
         }
         // 使用栈
         var stack = new Stack()
-        stack.push(1)
-        stack.push(2)
-        stack.push(3)
-        console.log(stack.pop())
-        console.log(stack.peek())
-        console.log(stack.isEmpty())
-        console.log(stack.size())
-        console.log(stack.toString())
-        console.log(stack.items)
-
-        //    十进制转二进制
-        function decToBin(number) {
+```
+应用：十进制转二进制
+```js
+function decToBin(number) {
             var s = new Stack()
             while (number > 0) {
                 s.push(number % 2)
@@ -68,7 +57,4 @@
             return binary
         }
         console.log(decToBin(100))
-    </script>
-</body>
-
-</html>
+```
