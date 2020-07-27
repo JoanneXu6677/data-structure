@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## 栈的常见操作
 + push():添加一个新元素到栈顶
 + pop():除移栈顶的元素，返回被除移的数
@@ -58,3 +59,8 @@ function decToBin(number) {
         }
         console.log(decToBin(100))
 ```
+=======
+# data-structure
+js数据结构和算法
+### 栈
+>>>>>>> 20ef41e2a894e47f81fcfd01e11bfecbe36fe3e1
