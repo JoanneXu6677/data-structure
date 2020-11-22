@@ -1,10 +1,10 @@
 # data-structure
 js数据结构和算法
-+ [栈](##栈的常见操作)
-+ [队列](##队列常见操作)
++ [栈](#栈的常见操作)
++ [队列](#队列常见操作)
++ [链表](#链表)
 ## 栈的常见操作
 + push():添加一个新元素到栈顶
-+ pop():除移栈顶的元素，返回被除移的数
 + peek():返回栈顶的元素，不对栈做任何修改
 + isEmpty():如果栈里没有任何元素就返回true，否则返回false
 + size():返回栈里的元素个数（和数组length很像）
@@ -71,3 +71,42 @@ function decToBin(number) {
 + size():返回队列包含元素个数
 + toString():将队列中的内容转成字符串形式
 
+## 链表
+```
+数组：
+缺点：
+1、需要申请连续空间；不满足时要扩容；
+2、在开头和中间插入数据成本很高，需要大量位移；
+```
+链表优点：
++ 链表可以不是连续空间，实现内存动态管理
++ 不必在创建时确定大小，可无限延伸
++ 插入和删除时，时间复杂度可以达到O（1）
+
+链表封装：
+```js
+        //封装链表类
+        function LinkedList() {
+            //属性
+            this.head=null;
+            //内部节点类
+            function Node(data){
+                this.data=data;
+                this.next=null;
+            }
+            //记录链表的长度
+            this.length=0;
+
+        }
+```
+链表常见操作：
++ append(element):尾部添加；
++ insert(position,element)：指定位置添加
++ get(position):获取对应位置的元素
++ indexOf(element):返回元素在列表中的索引，没有返回-1；
++ update(position):修改某个位置元素
++ removeAt(position):从某个特定位置除移一项;
++ remove(element)：除移一项；
++ isEmpty():不包含任何元素返回true;大于0返回false；
++ size();返回链表包含元素个数;
++ toString():由于列表项使用了Node类，就需要重写继承自js对象的toString方法，让其只输出元素的值；
