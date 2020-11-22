@@ -63,10 +63,10 @@ function decToBin(number) {
 ```
 
 ### 队列常见操作
-enqueue(element)：向队尾添加一个或多个新的项。
-dequeue():移除队列的第一项，返回被移除的元素。
-front():返回队列中第一个元素。队列不变，只返回信息。
-isEmpty():如果队列中不包含任何元素，返回true，否则返回false
-size():返回队列包含元素个数
-toString():将队列中的内容转成字符串形式
++ enqueue(element)：向队尾添加一个或多个新的项。
++ dequeue():移除队列的第一项，返回被移除的元素。
++ front():返回队列中第一个元素。队列不变，只返回信息。
++ isEmpty():如果队列中不包含任何元素，返回true，否则返回false
++ size():返回队列包含元素个数
++ toString():将队列中的内容转成字符串形式
 
