@@ -1,4 +1,6 @@
-<<<<<<< HEAD
+# data-structure
+js数据结构和算法
++ [栈](##栈的常见操作)
 ## 栈的常见操作
 + push():添加一个新元素到栈顶
 + pop():除移栈顶的元素，返回被除移的数
@@ -59,8 +61,12 @@ function decToBin(number) {
         }
         console.log(decToBin(100))
 ```
-=======
-# data-structure
-js数据结构和算法
-### 栈
->>>>>>> 20ef41e2a894e47f81fcfd01e11bfecbe36fe3e1
+
+### 队列常见操作
+enqueue(element)：向队尾添加一个或多个新的项。
+dequeue():移除队列的第一项，返回被移除的元素。
+front():返回队列中第一个元素。队列不变，只返回信息。
+isEmpty():如果队列中不包含任何元素，返回true，否则返回false
+size():返回队列包含元素个数
+toString():将队列中的内容转成字符串形式
+
