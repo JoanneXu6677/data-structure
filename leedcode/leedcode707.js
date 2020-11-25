@@ -17,17 +17,16 @@ function Node(data){
    * @return {number}
    */
   MyLinkedList.prototype.get = function(index) {
-      //越界判断
-      if(index<0||index>=this.length) return -1;
-      var count=0;
-      var current=this.head;
-      while(count<index){
-          //注意！！！
-          if(current.next==null) return -1;
-          count+=1;
-          current=current.next;
-      }
-      return current.val;
+    if(index<0||index>this.length-1) return -1;
+    var count=0;
+    var current=this.head;
+    while(count<index){
+        //注意！！！
+        count+=1;
+        if(current.next==null) break;
+        current=current.next;
+    }
+    return current.val;
   };
   
   /**
@@ -38,14 +37,12 @@ function Node(data){
   MyLinkedList.prototype.addAtHead = function(val) {
     var newNode=new Node(val);
     //考虑是否有元素
-    if(this.length==0){
-        this.head=newNode;
+    if(this.head==null){
         this.tail=newNode;
     }else{
         newNode.next=this.head;
-        this.head=newNode;
     }
-
+    this.head=newNode;
     this.length++;
   };
   
@@ -57,13 +54,13 @@ function Node(data){
   MyLinkedList.prototype.addAtTail = function(val) {
       var newNode=new Node(val);
       //考虑是否有元素
-      if(this.length!=0){
-        this.tail.next=newNode;
-        this.tail=newNode;
+      if(this.head==null){
+        this.head=newNode;
+      
       }else{
-          this.head=newNode;
-          this.tail=newNode;
+          this.tail.next=newNode;
       }
+      this.tail=newNode;
       this.length++;
   };
   
@@ -76,30 +73,43 @@ function Node(data){
    * @return {void}
    */
   MyLinkedList.prototype.addAtIndex = function(index, val) {
-     if(index>this.length) return false;
-     var newNode=new Node(val);
-     if(index<=0){
-         var current=this.head;
-         this.head=newNode;
-         this.head.next=current;
-     }else if(index==this.length){
-        var current=this.tail;
-        current.next=newNode;
-        this.tail=newNode;
-     }else{
-         var current=this.head;
-         var previous=null;
-         var count=0;
-         while(count!=index){
-             previous=current;
-             current=current.next;
-             count++;
-         }
-         previous.next=newNode;
-         newNode.next=current;
-     }
-        this.length++;
-     
+    //  if(index>this.length) return false;
+    //  var newNode=new Node(val);
+    //  if(index<=0){
+    //      var current=this.head;
+    //      this.head=newNode;
+    //      this.head.next=current;
+    //  }else if(index==this.length){
+    //     var current=this.tail;
+    //     current.next=newNode;
+    //     this.tail=newNode;
+    //  }else{
+    //      var current=this.head;
+    //      var previous=null;
+    //      var count=0;
+    //      while(count!=index){
+    //          previous=current;
+    //          current=current.next;
+    //          count++;
+    //      }
+    //      previous.next=newNode;
+    //      newNode.next=current;
+    //  }
+    //     this.length++;
+    if(index<=0)
+    return this.addAtHead(val)
+    if(this.len<index)
+      return
+    if(index==this.len)
+      return this.addAtTail(val)
+    var current=this.head
+    while(index-->1){
+      node=node.next
+    }  
+    var newnode=new Node(val)
+    newnode.next=current.next
+    current.next=newnode
+    this.length++
   };
   
   /**
