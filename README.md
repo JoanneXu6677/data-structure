@@ -110,3 +110,4 @@ function decToBin(number) {
 + isEmpty():不包含任何元素返回true;大于0返回false；
 + size();返回链表包含元素个数;
 + toString():由于列表项使用了Node类，就需要重写继承自js对象的toString方法，让其只输出元素的值；
+
